@@ -1,7 +1,13 @@
-const removeFromArray = function(array, toRemove) {
+const removeFromArray = function(array, ...removables) {
 
-  const index = array.indexOf(toRemove);
-  array.splice(index, 1);
+  for (const removable of removables) {
+    const index =  array.indexOf(removable);
+
+    if (index !== -1) {
+      array.splice(index, 1);
+    }
+    
+  }
 
   return array;
 

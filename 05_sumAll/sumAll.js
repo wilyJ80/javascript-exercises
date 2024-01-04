@@ -1,6 +1,11 @@
 const sumAll = function(bound1, bound2) {
 
-  let first = 0; last = 0;
+  if (bound1 < 0 || bound2 < 0 || typeof(bound1) !== "number" || 
+  typeof(bound2) !== "number") {
+    return "ERROR";
+  }
+
+  let first, last;
   if (bound1 > bound2) { last = bound1; first = bound2;}
   else if (bound2 > bound1) { first = bound1; last = bound2;}
   else { return bound1; }
